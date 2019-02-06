@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Mitchell Hewes <me@mitcdh.com>
+MAINTAINER putty182
 
 # install prerequisites
 RUN DEBIAN_FRONTEND=noninteractive \
