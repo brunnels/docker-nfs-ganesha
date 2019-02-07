@@ -19,6 +19,14 @@ function bootstrap_config {
 	echo "Bootstrapping Ganesha NFS config"
   cat <<END >${GANESHA_CONFIGFILE}
 
+NFS_CORE_PARAM
+{
+    NFS_Port = 2049
+    MNT_Port = 30001
+    NLM_Port = 30002
+    Rquota_Port = 875
+}
+
 EXPORT
 {
 		# Export Id (mandatory, each EXPORT must have a unique Export_Id)

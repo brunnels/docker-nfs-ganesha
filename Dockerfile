@@ -39,8 +39,9 @@ RUN dnf install -y dbus-x11 rpcbind hostname nfs-utils xfsprogs jemalloc libnfsi
 RUN mkdir -p /var/run/dbus
 RUN mkdir -p /export
 
-# expose mountd 20048/tcp and nfsd 2049/tcp and rpcbind 111/tcp 111/udp
-EXPOSE 2049/tcp 20048/tcp 111/tcp 111/udp
+COPY nfs-ports.sysconfig /tmp/
+RUN cat /tmp/nfs-ports.sysconfig > /etc/sysconfig/nfs; rm /tmp/nfs-ports.sysconfig;
+EXPOSE 2049/tcp 2049/udp 30001/tcp 30001/udp 30002/tcp 30002/udp 30003/tcp 30003/udp 111/tcp 111/udp 875/tcp 875/udp
 
 # Add startup script
 COPY start.sh /
