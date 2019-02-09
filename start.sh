@@ -22,8 +22,7 @@ function bootstrap_config {
 NFS_CORE_PARAM
 {
     NFS_Port = 2049;
-    MNT_Port = 30001;
-    NLM_Port = 30002;
+    MNT_Port = 20048;
     Rquota_Port = 875;
 }
 
